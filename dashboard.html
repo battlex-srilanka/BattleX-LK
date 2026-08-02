@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleX LK | User Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">BATTLE<span>X</span> LK</div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Overview</a></li>
+    <li><a href="#tournaments-section"><i class="fa-solid fa-trophy"></i> My Tournaments</a></li>
+   <li><a href="#" id="myAccountBtn"><i class="fa-solid fa-user"></i> My Account</a></li>
+    <li><a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+</ul>
+            </ul>
+            <!-- My Account Details Section (මුලින් ෂෝ වෙන්නේ නැති වෙන්න සඟවා ඇත) -->
+<section id="accountSection" class="account-section" style="display: none; margin-top: 30px;">
+    <h3 style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 20px; color: #fff;">My Account Details</h3>
+    <div class="account-card" style="background: #121216; border: 1px solid #2a2a35; border-radius: 12px; padding: 25px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div>
+                <p style="color: #888; font-size: 13px; margin-bottom: 5px;">Gamer Name</p>
+                <h4 id="accGamerName" style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: #fff;">Loading...</h4>
+            </div>
+            <div>
+                <p style="color: #888; font-size: 13px; margin-bottom: 5px;">Free Fire UID</p>
+                <h4 id="accUid" style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: #fff;">Loading...</h4>
+            </div>
+            <div>
+                <p style="color: #888; font-size: 13px; margin-bottom: 5px;">Phone Number</p>
+                <h4 id="accPhone" style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: #fff;">Loading...</h4>
+            </div>
+            <div>
+                <p style="color: #888; font-size: 13px; margin-bottom: 5px;">Email Address</p>
+                <h4 id="accEmail" style="font-family: 'Orbitron', sans-serif; font-size: 16px; color: #fff; word-break: break-all;">Loading...</h4>
+            </div>
+        </div>
+    </div>
+    
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2>Welcome, <span id="userName">Gamer</span></h2>
+                <p>Manage your Free Fire profile and tournament registrations.</p>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fa-solid fa-id-badge"></i>
+                    <div>
+                        <h4>Free Fire UID</h4>
+                        <p id="userUid">Loading...</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p id="userEmail">Loading...</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>
+                        <h4>Registered Matches</h4>
+                        <p>03</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Tournaments Section -->
+            <section class="registered-tournaments">
+                <h3>My Registered Tournaments</h3>
+                <div class="tournament-list-box">
+                    <div class="t-item">
+                        <div>
+                            <h4>BattleX Squad Clash #12</h4>
+                            <p><i class="fa-solid fa-map"></i> Bermuda | Squad</p>
+                        </div>
+                        <span class="status-badge">Registered</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase & Custom JS -->
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
