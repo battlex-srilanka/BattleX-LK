@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleX LK | My Account</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="my-account.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar / Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">BATTLE<span>X</span> LK</div>
+                <button id="menuToggleBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Overview</a></li>
+                <li><a href="tournament.html"><i class="fa-solid fa-gauge"></i> My Tournaments</a></li>
+                <li><a href="my-account.html" class="active"><i class="fa-solid fa-user"></i> My Account</a></li>
+                <li><a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Account Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2>My <span>Account Details</span></h2>
+                <p>View and manage your personal gamer profile information.</p>
+            </header>
+
+            <section class="account-section">
+                <div class="account-card">
+                    <div class="account-grid">
+                        <div class="info-box">
+                            <p>Gamer Name</p>
+                            <h4 id="accGamerName">Loading...</h4>
+                        </div>
+                        <div class="info-box">
+                            <p>Free Fire UID</p>
+                            <h4 id="accUid">Loading...</h4>
+                        </div>
+                        <div class="info-box">
+                            <p>Phone Number</p>
+                            <h4 id="accPhone">Loading...</h4>
+                        </div>
+                        <div class="info-box">
+                            <p>Email Address</p>
+                            <h4 id="accEmail">Loading...</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase & JS -->
+    <script type="module" src="my-account.js"></script>
+</body>
+</html>

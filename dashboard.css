@@ -1,0 +1,372 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0b0b0f;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar - Desktop Default */
+.sidebar {
+    width: 260px;
+    background: #121216;
+    border-right: 1px solid #2a2a35;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.sidebar .logo span {
+    color: #ff4655;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #191922;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover, 
+.nav-menu li a.active {
+    background: rgba(255, 70, 85, 0.15);
+    color: #ff4655;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 260px; /* Sidebar එකට ඉඩ තැබීම සඳහා */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.dashboard-header h2 span {
+    color: #ff4655;
+}
+
+.dashboard-header p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: #121216;
+    border: 1px solid #2a2a35;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-card i {
+    font-size: 24px;
+    color: #ff4655;
+    background: rgba(255, 70, 85, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.stat-card h4 {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.stat-card p {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    word-break: break-all;
+}
+
+/* Tournaments Section */
+.registered-tournaments h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.tournament-list-box {
+    background: #121216;
+    border: 1px solid #2a2a35;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.t-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a35;
+}
+
+.t-item:last-child {
+    border-bottom: none;
+}
+
+.t-item h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.t-item p {
+    font-size: 13px;
+    color: #888;
+}
+
+.status-badge {
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Account Section */
+.account-section {
+    background: #121216;
+    border: 1px solid #2a2a35;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE (768px සහ ඊට අඩු තිර සඳහා)
+   ========================================== */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    /* Sidebar එක උඩට ගෙන යාම (Mobile Top Navigation) */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid #2a2a35;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 5px;
+    }
+
+    .nav-menu li a {
+        font-size: 12px;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    /* Main Content එක යටට සැකසීම */
+    .main-content {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 20px;
+    }
+
+    /* Stats Grid එක එක යට එක වැටීමට */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Tournament item එක මොබයිල් වලදී එක යට එක පෙන්වීම */
+    .t-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .status-badge {
+        align-self: flex-start;
+    }
+}
+/* PC වලදී ඉරි තුනේ බටන් එක සඟවා තැබීම */
+#menuToggleBtn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Mobile වලදී පමණක් ඉරි තුනේ බටන් එක පෙන්වීම */
+    #menuToggleBtn {
+        display: block !important;
+    }
+
+    /* Mobile වලදී Sidebar එක කුඩා කොටුවකට සීමා කිරීම */
+    .sidebar {
+        padding: 12px 15px;
+    }
+
+    /* මෙනු ලැයිස්තුව එක යට එක වැටීමට සකස් කිරීම */
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 8px;
+    }
+}#dashboardLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #191922;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Hover කළ විට සහ Active (ක්ලික් කළ) විට වෙනස් වන ආකාරය */
+#dashboardLink:hover, 
+#dashboardLink.active {
+    background: rgba(255, 70, 85, 0.15) !important;
+    color: #ff4655 !important;
+    border: 1px solid rgba(255, 70, 85, 0.4) !important;
+}
+
+#dashboardLink i {
+    color: #888;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+#dashboardLink:hover i, 
+#dashboardLink.active i {
+    color: #ff4655 !important;
+}/* PC (Desktop) තිර වලදී ඉරි තුනේ බටන් එක පෙනෙන්නේ නැත, මෙනුව සාමාන්‍ය පරිදි පෙනේ */
+#menuToggleBtn {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Mobile වලදී පමණක් ඉරි තුනේ බටන් එක පෙන්වීම */
+    #menuToggleBtn {
+        display: flex !important;
+    }
+
+    /* Mobile වලදී sidebar එකේ ඉඩ ප්‍රමාණය පාලනය කිරීම */
+    .sidebar {
+        padding: 12px 15px;
+        height: auto;
+        position: relative;
+    }
+}@media (max-width: 768px) {
+    /* ප්‍රධාන පිටුව සහ සයිඩ්බාර් එක එක යට එක නිවැරදිව පෙන්වීමට */
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    /* Sidebar එක ස්ථාවරව (Fixed) නොතබා සාමාන්‍ය ප්‍රවාහයට ගැනීම */
+    .sidebar {
+        position: relative !important;
+        height: auto !important;
+        width: 100% !important;
+        padding: 12px 15px;
+        background: #121216;
+        border-right: none;
+        border-bottom: 1px solid #2a2a35;
+        z-index: 100;
+    }
+
+    /* Main Content එක (Welcome කොටස ඇතුළුව) කිසිවිටෙක සඟවන්නේ නැත */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 20px 15px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* ඉරි තුනේ බටන් එක Mobile වලදී පෙන්වීම */
+    #menuToggleBtn {
+        display: flex !important;
+    }
+}/* PC වලදී මෙනුව සාමාන්‍ය පරිදි දිස්වීම */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    #menuToggleBtn {
+        display: none !important;
+    }
+}
